@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo interactivo de productos tecnológicos y accesorios.">
+  <title>Mi Tienda | Catálogo de productos</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Mi Tienda, inicio">
+      <span class="brand-icon" aria-hidden="true">🛍️</span>
+      <span>Mi Tienda</span>
+    </a>
+    <label class="search-wrap">
+      <span class="sr-only">Buscar productos</span>
+      <input id="searchInput" type="search" placeholder="Buscar productos..." autocomplete="off">
+      <span aria-hidden="true">⌕</span>
+    </label>
+    <button id="cartJump" class="cart-top" type="button" aria-label="Ir al carrito">
+      🛒 <span>Carrito</span><b id="cartCount" class="count">0</b>
+    </button>
+  </header>
+
+  <main class="page-layout">
+    <aside class="sidebar">
+      <h2>Categorías</h2>
+      <p class="side-hint">Elige una categoría para filtrar los productos.</p>
+      <div class="category-list" role="group" aria-label="Filtrar por categoría">
+        <button class="category-btn active" type="button" data-category="Todos" aria-pressed="true">▦ <span>Todos</span></button>
+        <button class="category-btn" type="button" data-category="Tecnología" aria-pressed="false">💻 <span>Tecnología</span></button>
+        <button class="category-btn" type="button" data-category="Accesorios" aria-pressed="false">🎧 <span>Accesorios</span></button>
+      </div>
+      <div class="principle-note">
+        <strong>Diseño pensado para ti</strong>
+        <p>Los filtros, botones y mensajes indican qué puedes hacer y qué ocurrió después de cada acción.</p>
+      </div>
+    </aside>
+
+    <section class="catalog" aria-labelledby="catalogTitle">
+      <div class="catalog-heading">
+        <div>
+          <p class="eyebrow">CATÁLOGO</p>
+          <h1 id="catalogTitle">Encuentra tu próximo favorito</h1>
+          <p class="subheading">Productos útiles para estudiar, trabajar y disfrutar.</p>
+        </div>
+        <label class="select-wrap">Categoría
+          <select id="categorySelect" aria-label="Seleccionar categoría">
+            <option value="Todos">Todas</option>
+            <option value="Tecnología">Tecnología</option>
+            <option value="Accesorios">Accesorios</option>
+          </select>
+        </label>
+      </div>
+
+      <p id="resultsText" class="results-text" aria-live="polite">Mostrando 6 productos</p>
+      <div id="productGrid" class="product-grid">
+        <!-- Las tarjetas se generan con JavaScript a partir del catálogo. -->
+      </div>
+      <div id="noResults" class="empty-results" hidden>
+        <span aria-hidden="true">🔎</span>
+        <h2>No encontramos productos</h2>
+        <p>Prueba con otro nombre o cambia la categoría.</p>
+      </div>
+    </section>
+
+    <aside class="cart-panel" id="cartPanel" aria-labelledby="cartTitle">
+      <div class="cart-heading">
+        <h2 id="cartTitle">🛒 Tu carrito</h2>
+        <span id="cartItemsLabel">0 artículos</span>
+      </div>
+      <div id="cartItems" class="cart-items">
+        <div class="cart-empty">
+          <span aria-hidden="true">🛒</span>
+          <strong>Tu carrito está vacío</strong>
+          <p>Agrega un producto para comenzar.</p>
+        </div>
+      </div>
+      <div class="cart-footer">
+        <div class="total-line"><span>Total</span><strong id="cartTotal">$0</strong></div>
+        <button id="clearCart" class="clear-btn" type="button" disabled>Vaciar carrito</button>
+        <p class="cart-disclaimer">Carrito de demostración. No se realizan pagos.</p>
+      </div>
+    </aside>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden>
+    <span class="toast-check" aria-hidden="true">✓</span>
+    <span id="toastMessage">Producto agregado al carrito.</span>
+    <button id="closeToast" type="button" aria-label="Cerrar mensaje">×</button>
+  </div>
+
+  <footer>
+    <p>Mi Tienda · Catálogo de demostración para una práctica de diseño de interacción.</p>
+  </footer>
+</body>
+</html>

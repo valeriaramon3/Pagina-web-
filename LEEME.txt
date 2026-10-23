@@ -1,0 +1,22 @@
+MI TIENDA — CATÁLOGO DE PRODUCTOS
+
+ARCHIVOS
+- index.html: estructura de la página.
+- styles.css: estilos, diseño adaptable y estados visuales.
+- script.js: catálogo, filtros, búsqueda y carrito simulado.
+- boceto_interfaz.png: boceto visual con anotaciones de los cinco principios.
+
+CÓMO ABRIR
+1. Descomprime la carpeta.
+2. Abre index.html con Chrome, Edge o Firefox.
+3. Para que se muestren las fotografías, necesitas conexión a Internet porque las imágenes están alojadas en Unsplash. Si no cargan, la interfaz muestra un emoji de respaldo.
+4. No se requiere instalación ni servidor. El carrito solo funciona como demostración y no procesa pagos.
+
+PRINCIPIOS DE DISEÑO DE INTERACCIÓN
+1. Visibilidad: tarjetas con imagen, nombre, categoría, precio, descripción y botón; filtros y carrito visibles.
+2. Retroalimentación: mensaje de confirmación, contador del carrito y total se actualizan al agregar productos.
+3. Restricciones: el teclado agotado tiene el botón deshabilitado; JavaScript también impide añadirlo.
+4. Consistencia: tarjetas, tipografía, colores, botones y espacios mantienen el mismo estilo.
+5. Affordance: botones con apariencia presionable, cursor, estados hover, campos identificados y controles +/− para cambiar cantidades.
+
+Puedes editar el catálogo modificando el arreglo `products` al inicio de script.js.
